@@ -105,3 +105,6 @@ class Author(models.Model):
         Строка для представления объекта Model.
         """
         return '%s, %s' % (self.last_name, self.first_name)
+
+    class Meta:
+        ordering = ['last_name']
