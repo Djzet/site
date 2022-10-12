@@ -7,15 +7,16 @@
 
   <p>Добро пожаловать в <em>LocalLibrary</em>, очень простой веб-сайт Django, разработанный в качестве учебного примера в сети разработчиков Mozilla.</p>
 
-<h2>Dynamic content</h2>
+<h2>Динамический контент</h2>
 
-  <p>The library has the following record counts:</p>
+  <p>В библиотеке имеется следующее количество записей:</p>
   <ul>
     <li><strong>Books:</strong> {{ num_books }}</li>
     <li><strong>Copies:</strong> {{ num_instances }}</li>
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
     <li><strong>Authors:</strong> {{ num_authors }}</li>
     <li><strong>Genre:</strong> {{ num_genre }}</li>
+    <li><strong>Book:</strong> {{ num_book }}</li>
   </ul>
-
+<p>Вы посетили эту страницу {{ num_visits }}{% if num_visits == 1 %} time{% else %} time{% endif %}.</p>
 {% endblock %}
