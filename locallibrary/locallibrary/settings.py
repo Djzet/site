@@ -125,6 +125,4 @@ SESSION_SAVE_EVERY_REQUEST = True
 # Перенаправление на домашний URL после входа в систему (по умолчанию перенаправляется на /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
 
-LOGOUT_REDIRECT_URL = 'logged_out'
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
