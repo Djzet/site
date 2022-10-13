@@ -13,7 +13,8 @@
   <dt><a href="{% url 'book-detail' book.pk %}">{{book}}</a> ({{book.bookinstance_set.all.count}})</dt>
   <dd>{{book.summary}}</dd>
 {% endfor %}
-</dl>
-
+</dl><br>
+  <p><a href="{% url 'author-update' author.pk %}">Author update</a></p>
+  <p><a href="{% url 'author-delete' author.pk %}">Author delete</a></p>
 </div>
 {% endblock %}

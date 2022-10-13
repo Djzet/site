@@ -26,11 +26,11 @@ class Book(models.Model):
     Модель, представляющая книгу (но не конкретную копию книги)
     """
     title = models.CharField(max_length=200)
-    author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey('author', on_delete=models.SET_NULL, null=True)
     # Используется внешний ключ, потому что у книги может быть только один автор, а у авторов может быть несколько книг
     # Автор как строка, а не как объект, потому что он еще не объявлен в файле.
     summary = models.TextField(max_length=1000, help_text="Enter a brief description of the book")
-    isbn = models.CharField('ISBN', max_length=13, help_text='13 Character <a href="https://www.isbn-international.org'
+    isbn = models.CharField('isbn', max_length=13, help_text='13 Character <a href="https://www.isbn-international.org'
                                                              '/content/what-isbn">ISBN number</a>')
     genre = models.ManyToManyField(Genre, help_text="Select a genre for this book")
 
@@ -64,7 +64,7 @@ class BookInstance(models.Model):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                           help_text="Уникальный идентификатор этой конкретной книги во всей библиотеке")
-    book = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True)
+    book = models.ForeignKey('book', on_delete=models.SET_NULL, null=True)
     imprint = models.CharField(max_length=200)
     due_back = models.DateField(null=True, blank=True)
     borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
@@ -101,7 +101,7 @@ class Author(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
-    date_of_death = models.DateField('Died', null=True, blank=True)
+    date_of_death = models.DateField('died', null=True, blank=True)
 
     def get_absolute_url(self):
         """

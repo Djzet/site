@@ -18,6 +18,8 @@
     {% if copy.status != 'a' %}<p><strong>Due to be returned:</strong> {{copy.due_back}}</p>{% endif %}
     <p><strong>Imprint:</strong> {{copy.imprint}}</p>
     <p class="text-muted"><strong>Id:</strong> {{copy.id}}</p>
-    {% endfor %}
+    {% endfor %}<br>
+      <p><a href="{% url 'book-update' book.pk %}">Book update</a></p>
+      <p><a href="{% url 'book-delete' book.pk %}">Book delete</a></p>
   </div>
 {% endblock %}
