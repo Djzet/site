@@ -43,4 +43,4 @@ class RenewBookModelForm(ModelForm):
         model = BookInstance
         fields = ['due_back', ]
         labels = {'due_back': _('Renewal date'), }
-        help_texts = {'due_back': _('Enter a date between now and 4 weeks (default 3).'), }
+        help_texts = {'due_back': _('Введите дату между настоящим моментом и 4 неделями (по умолчанию 3).'), }
